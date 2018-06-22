@@ -4,7 +4,6 @@ console.log(person.name);
 
 sayHello("Kinson");
 
-
 var request = new Request("https://jsonplaceholder.typicode.com/posts", {
 	method: "GET"
 });

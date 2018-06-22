@@ -1,18 +1,13 @@
 const path = require("path");
 
-/* This will create a web config that uses babel to compile
-	ES6 javascript code to ES5
-*/
 module.exports = {
-	mode: "development",
-	devtool: "source-map",
 	entry: {
 		app: [
 		"babel-polyfill",//This is required for "async await" functionality
 		"./src/app.js"
 	]},
 	output: {
-		path: path.resolve(__dirname, "build"),
+		path: path.resolve(__dirname, "../build"),
 		filename: "app.bundle.js"
 	},
 	module: {
@@ -30,5 +25,5 @@ module.exports = {
 				presets: ["env", "stage-0"]
 			}
 		}]
-	}
+	}	
 }

@@ -1,25 +1,29 @@
 {
-  "name": "bable-webpack-starter",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-	"clean": "del /q /s /f build",
-	"build": "webpack",
-	"rebuild": "npm run clean & npm run build",
-	"start": "npm run rebuild & webpack-dev-server --output-public-path=/build/"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "webpack": "^4.12.0",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
-  }
+	"name": "bable-webpack-starter",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"clean": "del /q /s /f build",
+		"build-dev": "webpack --config webpack/webpack.dev.js",
+		"build-prod": "webpack --config webpack/webpack.prod.js",
+		"rebuild-dev": "npm run clean & npm run build-dev",
+		"rebuild-prod": "npm run clean & npm run build-prod",
+		"start": "cls & npm run rebuild-dev & webpack-dev-server --output-public-path=/build/",
+		"test": "cls & npm run rebuild-dev & webpack-dev-server --config webpack/webpack.dev.js  --output-public-path=/build/"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.1.4",
+		"babel-polyfill": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-stage-0": "^6.24.1",
+		"webpack": "^4.12.0",
+		"webpack-cli": "^3.0.8",
+		"webpack-dev-server": "^3.1.4",
+		"webpack-merge": "^4.1.3"
+	}
 }
