@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -25,5 +26,9 @@ module.exports = {
 				presets: ["env", "stage-0"]
 			}
 		}]
-	}	
+	},
+	plugins: [
+		//Used to include html files in the output to detect changes during dev server runtime
+		new HtmlWebpackPlugin()
+	]
 }
