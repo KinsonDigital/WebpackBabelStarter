@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "npm run build & webpack-dev-server --output-public-path=/build/"
+	"clean": "del /q /s /f build",
+	"build": "webpack",
+	"rebuild": "npm run clean & npm run build",
+	"start": "npm run rebuild & webpack-dev-server --output-public-path=/build/"
   },
   "keywords": [],
   "author": "",
