@@ -7,9 +7,10 @@
 		"clean": "del /q /s /f build",
 		"build-dev": "webpack --config webpack/webpack.dev.js",
 		"build-prod": "webpack --config webpack/webpack.prod.js",
-		"rebuild-dev": "npm run clean & npm run build-dev",
-		"rebuild-prod": "npm run clean & npm run build-prod",
-		"start": "cls & npm run rebuild-dev & webpack-dev-server --config webpack/webpack.dev.js --output-public-path=/build/"
+		"rebuild-dev": "npm run clean && npm run build-dev",
+		"publish": "npm run clean && npm run build-prod",
+		"serve": "webpack-dev-server --config webpack/webpack.dev.js --output-public-path=/build/",
+		"start": "cls & npm run rebuild-dev && npm run serve"
 	},
 	"keywords": [],
 	"author": "",
